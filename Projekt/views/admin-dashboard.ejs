@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+</head>
+<body>
+  <h1>Welcome, <%= user.username %>!</h1>
+  <p>This is the admin dashboard.</p>
+  <form action="/admin/addtext" method="POST">
+    <label for="textcontent">Text Content:</label><br>
+    <textarea id="textcontent" name="textcontent" rows="4" cols="50"></textarea><br>
+    <input type="submit" value="Submit">
+  </form>
+  <form action="/admin/addimage" method="POST" enctype="multipart/form-data">
+    <label for="image">Image:</label><br>
+    <input type="file" id="image" name="image" required><br>
+    <label for="value">Position Value (1-3):</label><br>
+    <select id="value" name="value" required>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select><br>
+    <input type="submit" value="Upload Image">
+  </form>
+  
+  
+  
+</body>
+</html>

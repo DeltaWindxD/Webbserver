@@ -1,0 +1,59 @@
+<!-- views/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link type="text/css" href="public\css\style.css" rel="stylesheet" />
+    <title>Home Page</title>
+    <style></style>
+  </head>
+  <body>
+    <a href="/admin/login" class="admin-login-btn">Admin Login</a>
+    <div class="text-content">
+      <h2>Sparade texter</h2>
+      <% if (texts.length) { %>
+      <ul>
+        <% texts.forEach(text => { %>
+        <li><%= text.content %></li>
+        <% }); %>
+      </ul>
+      <% } else { %>
+      <p>No texts have been submitted yet.</p>
+      <% } %>
+    </div>
+    <div class="image-content">
+      <h2><br />Bilder</h2>
+      <% for(let value = 1; value <= 3; value++) { %>
+      <div class="position">
+        <h3>Bild <%= value %></h3>
+        <% images.filter(image => image.value == value).forEach(image => { %>
+        <img
+          src="/uploads/<%= image.filename %>"
+          alt="Image"
+          style="width: 200px; height: auto"
+        />
+        <% }); %>
+      </div>
+      <% } %>
+    </div>
+    <style>
+      .image-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        font-size: 1.5rem;
+      }
+
+      .text-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        font-size: 1.5rem;
+      }
+    </style>
+  </body>
+</html>

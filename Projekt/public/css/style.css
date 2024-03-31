@@ -1,0 +1,42 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+}
+
+.admin-login-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  position: absolute;
+  right: 0vw;
+  top: 0vh;
+}
+
+@keyframes admin-login-btn {
+  0% {
+    background-color: 007bff;
+  }
+  50% {
+    background-color: 0056b3;
+  }
+  100% {
+    background-color: hsla(211, 96%, 33%, 0.385);
+  }
+}
+.admin-login-btn:hover {
+  animation-name: admin-login-btn;
+  animation-duration: 0.2s;
+  animation-fill-mode: both;
+  animation-direction: normal;
+}
